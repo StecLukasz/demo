@@ -79,7 +79,7 @@
 
             </nav>
             <!-- End of Topbar -->
-
+<form name="personal" method="post" action="/editPerson/${person.id}"/>
             <!-- Begin Page Content -->
             <div class="container-fluid">
 
@@ -89,29 +89,29 @@
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
                                 <div class="form-group row">
-                                    <label for="firstName" class="col-2 col-form-label">Imię</label>
+                                    <label  class="col-2 col-form-label">Imię</label>
                                     <div class="col-10">
-                                        <input class="form-control" type="text" value="Imię">
+                                        <input class="form-control" type="text" name="firstName" value="${person.firstName}">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="lastName" class="col-2 col-form-label">Nazwisko</label>
+                                    <label  class="col-2 col-form-label">Nazwisko</label>
                                     <div class="col-10">
-                                        <input class="form-control" type="text" value="Nazwisko">
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label for="github" class="col-2 col-form-label">URL Git</label>
-                                    <div class="col-10">
-                                        <input class="form-control" type="text" value="github">
+                                        <input class="form-control" type="text" name="lastName" value="${person.lastName}">
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="start" class="col-2 col-form-label">Od czego się zaczęło:</label>
+                                    <label  class="col-2 col-form-label">URL Git</label>
                                     <div class="col-10">
-                                        <textarea class="form-control" rows="5">start</textarea>
+                                        <input class="form-control" type="text" name="gitHub" value="${person.gitHub}">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label  class="col-2 col-form-label">Od czego się zaczęło:</label>
+                                    <div class="col-10">
+                                        <textarea class="form-control" rows="5"  name="start" >${person.start}</textarea>
                                     </div>
                                 </div>
 
@@ -123,7 +123,7 @@
                                         </label>
                                     </div>
                                     <div class="col-1">
-                                        <label class="radio-inline"><input type="radio" id="question" name="checkbox" value="0" checked>NIE</label>
+                                        <label class="radio-inline"><input type="radio" id="question" name="checkbox" value="0" >NIE</label>
                                     </div>
                                 </div>
 
@@ -132,7 +132,7 @@
                     </div>
 
 
-
+<c:if test="${person.checkbox eq '1'}">
                     <!-- Content Row -->
 
                     <div class="col-xl-12 col-md-12 mb-12">
@@ -141,55 +141,55 @@
 
                                 <div class="row">
                                     <div class="col-2">
-                                        <label for="1" class="col-form-label">Java</label>
-                                        <input class="form-control" type="text" value="%">
+                                        <label  class="col-form-label">Java</label>
+                                        <input class="form-control" type="text" value="${person.java}" name="java">
                                     </div>
 
 
                                     <div class="col-2">
-                                        <label for="1" class="col-form-label">Wzorce projektowe</label>
-                                        <input class="form-control" type="text" value="%">
+                                        <label  class="col-form-label">Wzorce projektowe</label>
+                                        <input class="form-control" type="text" value="${person.bestpractice}" name="bestpractice">
                                     </div>
 
 
                                     <div class="col-2">
-                                        <label for="1" class="col-form-label">TDD</label>
-                                        <input class="form-control" type="text" value="%">
+                                        <label  class="col-form-label">TDD</label>
+                                        <input class="form-control" type="text" value="${person.tdd}" name="tdd">
                                     </div>
 
 
                                     <div class="col-2">
-                                        <label for="1" class="col-form-label">Bazy danych SQL</label>
-                                        <input class="form-control" type="text" value="%">
+                                        <label class="col-form-label">Bazy danych SQL</label>
+                                        <input class="form-control" type="text" value="${person.question}" name="question">
                                     </div>
 
 
 
                                     <div class="col-2">
-                                        <label for="1" class="col-form-label">Hibernate JPA</label>
-                                        <input class="form-control" type="text" value="%">
+                                        <label  class="col-form-label">Hibernate JPA</label>
+                                        <input class="form-control" type="text" value="${person.hibernate}" name="hibernate">
                                     </div>
 
 
                                     <div class="col-2">
-                                        <label for="1" class="col-form-label">HTML_CSS</label>
-                                        <input class="form-control" type="text" value="%">
+                                        <label  class="col-form-label">HTML_CSS</label>
+                                        <input class="form-control" type="text" value="${person.html}" name="html">
                                     </div>
 
 
                                     <div class="col-2">
-                                        <label for="1" class="col-form-label">JSP</label>
-                                        <input class="form-control" type="text" value="%">
+                                        <label  class="col-form-label">JSP</label>
+                                        <input class="form-control" type="text" value="${person.jsp}" name="jsp">
                                     </div>
 
                                     <div class="col-2">
-                                        <label for="1" class="col-form-label">Thymeleaf</label>
-                                        <input class="form-control" type="text" value="%">
+                                        <label  class="col-form-label">Thymeleaf</label>
+                                        <input class="form-control" type="text" value="${person.thymeleaf}" name="thymeleaf">
                                     </div>
 
                                     <div class="col-2">
-                                        <label for="1" class="col-form-label">git</label>
-                                        <input class="form-control" type="text" value="%">
+                                        <label  class="col-form-label">git</label>
+                                        <input class="form-control" type="text" value="${person.git}" name="git">
                                     </div>
 
 
@@ -198,6 +198,7 @@
                         </div>
                     </div>
                 </div>
+                </c:if>
                 <input class="btn btn-success pull-left" type="submit" value="Zapisz zmiany" id="searchButton"></input>
 
 
@@ -233,13 +234,11 @@
                     </div>
                 </div>
 
-
-
-
-
             </div>
-            <!-- /.container-fluid -->
 
+
+            <!-- /.container-fluid -->
+        </form>
         </div>
         <!-- End of Main Content -->
 
