@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+
 @Entity
 public class Person {
     @Id
@@ -25,13 +26,14 @@ public class Person {
     private Integer checkbox;
 
 
+
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "person")
     private Set<Task> tasks = new HashSet<Task>();
 
-    public Person() {
+    public Person(String firstName, String lastName, String gitHub, String start, Integer java, Integer bestpractice, Integer tdd, Integer question, Integer hibernate, Integer html, Integer jsp, Integer thymeleaf, Integer git, Integer checkbox) {
     }
 
-    public Person(Long id, String firstName, String lastName, String gitHub, String start, Integer java, Integer bestpractice, Integer tdd, Integer question, Integer hibernate, Integer html, Integer jsp, Integer thymeleaf, Integer git, Integer checkbox, Set<Task> tasks) {
+    public Person(String firstName, String lastName, String gitHub, String start) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -48,6 +50,10 @@ public class Person {
         this.git = git;
         this.checkbox = checkbox;
         this.tasks = tasks;
+    }
+
+    public Person() {
+
     }
 
     public Long getId() {
