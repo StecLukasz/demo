@@ -6,11 +6,10 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-public interface TaskRepository  extends JpaRepository<Task, Long> {
-
-
+@Repository
+public interface TasksRepository extends JpaRepository<Task, Long> {
     List<Task> findAll();
     Task save(Task entity);
-    Task findById(Long id);
-
+    void findById();
 }
+
